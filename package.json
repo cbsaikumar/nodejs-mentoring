@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-mentoring",
+  "version": "1.0.0",
+  "description": "This repository has been created as part NodeJS mentoring program from EPAM about homeworks.",
+  "main": "app.js",
+  "scripts": {
+    "ts-build": "babel src --out-dir dist",
+    "start": "nodemon --exec babel-node src/app.js",
+    "serve": "node dist/app.js",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbsaikumar/nodejs-mentoring.git"
+  },
+  "author": "Bhargava Chittapudi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbsaikumar/nodejs-mentoring/issues"
+  },
+  "homepage": "https://github.com/cbsaikumar/nodejs-mentoring#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "nodemon": "^1.19.1"
+  }
+}
