@@ -4,10 +4,9 @@
   "description": "This repository has been created as part NodeJS mentoring program from EPAM about homeworks.",
   "main": "app.js",
   "scripts": {
-    "copy": "cpx ./src/config/* build/config",
-    "build": "babel ./src -d ./build",
-    "execute": "nodemon ./build/app.js",
-    "start": "npm run copy && npm run build && npm run execute",
+    "ts-build": "babel src --out-dir dist",
+    "start": "nodemon --exec babel-node src/app.js",
+    "serve": "node dist/app.js",
     "test": ""
   },
   "repository": {
@@ -21,12 +20,11 @@
   },
   "homepage": "https://github.com/cbsaikumar/nodejs-mentoring#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "cpx": "^1.5.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "nodemon": "^1.19.1"
   }
 }

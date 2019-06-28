@@ -3,5 +3,5 @@ import {Product, User} from './models';
 
 console.log(config.name);
 
-console.log(new User());
-console.log(new Product());
+new User();
+new Product();
