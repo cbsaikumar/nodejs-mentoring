@@ -1,24 +1,22 @@
 import fs from 'fs';
-import EventEmitter from 'events';
-class MyEmitter extends EventEmitter{};
+import { EventEmitter } from 'events';
 
-export class DirWatcher{
+export class DirWatcher extends EventEmitter{
     watch(path, delay){
-        this.myEmitter = new MyEmitter();
-        let files, files2;
+        let files = [];
+        let latestFiles = [];
         setInterval(()=>{
-            files2 = fs.readdirSync(path);
-            if(files){
+            latestFiles = fs.readdirSync(path);
+            if(Array.isArray(files) && files.length){
                 // For addition of files
-                let change = this.compare(files, files2);
+                let change = this.compare(files, latestFiles);
                 if(change) {
-                    this.myEmitter.emit('changed', change);
-                }
-                else{
+                    this.emit('changed', change);
+                }else{
                     //For changes in any files.
                     files.forEach((file, index) => {
                         if((Date.now() - fs.statSync(path+'/'+file).mtimeMs) < 1000){
-                            this.myEmitter.emit('changed',files2[index]);
+                            this.emit('changed',latestFiles[index]);
                         }
                     });
                 }
@@ -27,26 +25,23 @@ export class DirWatcher{
         }, delay);
     }
 
-    compare(arr1, arr2){
-        let el;
-        if(arr1.length === arr2.length){
-            for(let i=0; i<arr1.length; i++) {
-                if(arr2[i] != arr1[i]){
-                    el = arr2[i];
-                    console.log(el);
+    compare(filesArray, latestFilesArray){
+        let element = '';
+        if(filesArray.length === latestFilesArray.length){
+            for(let i=0; i<filesArray.length; i++) {
+                if(latestFilesArray[i] != filesArray[i]){
+                    element = latestFilesArray[i];
                 }
             };
-            return el;
+            return element;
         }
         else{
-            let el;
-            for(let i=0; i<Math.max(arr1.length, arr2.length); i++) {
-                if(arr2[i] != arr1[i]){
-                    el = arr1[i]?arr1[i]:arr2[i];
-                    console.log(el);
+            for(let i=0; i<Math.max(filesArray.length, latestFilesArray.length); i++) {
+                if(latestFilesArray[i] !== filesArray[i]){
+                    element = filesArray[i]?filesArray[i]:latestFilesArray[i];
                 }
             };
-            return el;
+            return element;
         }
     }
 }

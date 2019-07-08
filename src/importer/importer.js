@@ -1,5 +1,5 @@
 import fs from 'fs';
-import csvtojson from 'csvtojson';
+import { CsvToJson } from '../utils';
 
 export class Importer{
     constructor(dirwatcher){
@@ -7,22 +7,32 @@ export class Importer{
         this.path = 'src/data';
 
         this.dirwatcher.watch(this.path, 1000);
-        this.dirwatcher.myEmitter.on('changed', (filename) => {
-            this.import(this.path+'/'+filename).then(jsonObj => console.log(jsonObj));
+        this.dirwatcher.on('changed', (filename) => {
+            // Asynchronous
+            this.import(this.path+'/'+filename).then(csvData =>{
+                console.log(CsvToJson(csvData));
+            });
 
-            this.importSync(this.path+'/'+filename).then(jsonObj => console.log(jsonObj));
+            //Synchronous
+            let csvData = this.importSync(this.path+'/'+filename);
+            console.log(CsvToJson(csvData));
         });
     }
 
     //Asynchronous
     import(path){
-        return csvtojson().fromFile(path);
+        return new Promise((resolve, reject) => {
+            fs.readFile(path, 'utf-8', (error, data) => {
+                if(error) reject(error);
+                
+                resolve(data);
+            });
+        });
     }
 
     //Synchronous
     importSync(path){
         let data = fs.readFileSync(path, {encoding:'utf-8'});
-
-        return csvtojson().fromString(data);
+        return data;
     }
 }
