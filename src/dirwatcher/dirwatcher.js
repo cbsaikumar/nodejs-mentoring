@@ -29,19 +29,20 @@ export class DirWatcher extends EventEmitter{
         let element = '';
         if(filesArray.length === latestFilesArray.length){
             for(let i=0; i<filesArray.length; i++) {
-                if(latestFilesArray[i] != filesArray[i]){
+                if(latestFilesArray[i] !== filesArray[i]){
                     element = latestFilesArray[i];
                 }
             };
-            return element;
         }
         else{
             for(let i=0; i<Math.max(filesArray.length, latestFilesArray.length); i++) {
                 if(latestFilesArray[i] !== filesArray[i]){
-                    element = filesArray[i]?filesArray[i]:latestFilesArray[i];
+                    element = filesArray[i] 
+                    ? filesArray[i]
+                    : latestFilesArray[i];
                 }
             };
-            return element;
         }
+        return element;
     }
 }
