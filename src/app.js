@@ -1,7 +1,5 @@
-import * as config from './config/config.json';
-import {Product, User} from './models';
+import { Importer } from './importer';
+import { DirWatcher } from './dirwatcher';
 
-console.log(config.name);
-
-new User();
-new Product();
+let dirwatcher = new DirWatcher();
+new Importer(dirwatcher);
