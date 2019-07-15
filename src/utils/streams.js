@@ -110,7 +110,7 @@ function convertFromFile(file){
     fs.createReadStream(path.join('src', 'data', file))
         .pipe(stream)
         .pipe(process.stdout)
-        .on('done', ()=>{
+        .on('end', ()=>{
             log('convertFromFile is done')
         });
 }
