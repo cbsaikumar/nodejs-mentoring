@@ -28,6 +28,8 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
-    "csvtojson": "^2.0.10"
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "through2": "^3.0.1"
   }
 }
