@@ -25,6 +25,7 @@
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
+    "esm": "^3.2.25",
     "nodemon": "^1.19.1"
   },
   "dependencies": {
