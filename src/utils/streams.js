@@ -7,7 +7,7 @@ import https from 'https';
 import { cssFileRemoteUrl } from '../constants/constants';
 import chalk from 'chalk';
 
-const log = console.log;
+const { log } = console;
 
 program
   .version('0.1.0')
