@@ -23,5 +23,6 @@ function ​​​convertToFile​​(filePath) { ​/* ... */​ }
 ```
 
 ## TO RUN STREAMS.JS RUN AS IN BELOW LINE 
-``` npx babel-node src/utils/streams.js --help(or -h) for more details.
+```bash
+npx babel-node src/utils/streams.js --help(or -h) for more details.
 ```
