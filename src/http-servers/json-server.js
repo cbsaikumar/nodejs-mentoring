@@ -1,9 +1,10 @@
 import http from 'http';
-const log = console.log;
+const { log } = console;
 
+const port = process.env.port || 3000;
 //create a server object:
 http.createServer((req, res) => {
-    log('Server started and listening on port 8080.');    
+   
     res.writeHead(200, {'content-type': 'application/json'});
 
     const product = {
@@ -19,4 +20,4 @@ http.createServer((req, res) => {
     res.write(JSON.stringify(product));
 
     res.end();
-}).listen(8080);
+}).listen(port, ()=>log(`Server started and listening on port ${port}.`));

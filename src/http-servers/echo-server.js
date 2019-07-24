@@ -7,7 +7,7 @@ http.createServer((req, res) => {
    
     res.writeHead(200, {'Content-Type': 'text/plain'});
 
-    res.write('Hello World');
+    req.pipe(res);
 
     res.end();
 }).listen(port, ()=>log(`Server started and listening on port ${port}.`));
