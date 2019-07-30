@@ -1,15 +1,9 @@
-import express from './app';
+import express from 'express';
 const { log } = console;
-import {cookieParser} from './middlewares/cookie-parser';
-import {queryParser} from './middlewares/queryParser';
+import app from './app';
 
-const app = express();
-const router = express.Router();
+// app.get('/api', console.log('Hi'));
 
-app.get('/', (req, res)=> console.log('Hello World'));
 const port = process.env.PORT || 8080;
-app.use(cookieParser);
-app.use(queryParser);
 
-
-app.listen(port, log(`App listening on port ${port}!`));
+app.listen(port, () => log(`App listening on port ${port}!`));

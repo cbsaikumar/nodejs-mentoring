@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Avinash",
+        "brand": "Samsung",
+        "model": "S10",
+        "price": 57000
+    },
+    {
+        "id": 2,
+        "name": "Phone 2",
+        "brand": "Oneplus",
+        "model": "7 Pro",
+        "price": 52000
+    }
+]

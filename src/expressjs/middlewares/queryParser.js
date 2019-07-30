@@ -1,7 +1,9 @@
-export function queryParser(err, req, res, next){
-    if(err) next(req, res);
-
+const queryParser = () => (req, res, next) => {
+    if (req.parsedQuery) return next();
     const query = req.query;
+    if (!query) return next();
     req.parsedQuery = query;
-    next(req, res);
-}
+    return next();
+  }
+  
+  export default queryParser;
