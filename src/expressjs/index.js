@@ -1,4 +1,3 @@
-import express from 'express';
 const { log } = console;
 import app from './app';
 

@@ -24,5 +24,17 @@ function ​​​convertToFile​​(filePath) { ​/* ... */​ }
 
 ## TO RUN STREAMS.JS RUN AS IN BELOW LINE 
 ```bash
-npx babel-node src/utils/streams.js --help(or -h) for more details.
+nodemon -r esm src/utils/streams.js --help(or -h) for more details.
+```
+
+## TO RUN EXPRESS PROJECT RUN AS IN BELOW LINE 
+```bash
+nodemon -r esm src/expressjs/index.js
+
+URL                             Method              Action
+/api/products                    GET        Return ​ALL​ products
+/api/products/:id                GET        Return ​SINGLE​ product
+/api/products/:id/reviews        GET        Return ​ALL​ reviews for a single product
+/api/products                    POST       Add ​NEW​ product and return it
+/api/users                       GET        Return ​ALL​ users
 ```

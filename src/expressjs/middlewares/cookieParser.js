@@ -1,4 +1,4 @@
-const cookieParser = () => (req, res, next) => {
+export const cookieParser = () => (req, res, next) => {
     if (req.parsedCookies) return next();
     
     const cookies = req.headers.cookie;
@@ -7,4 +7,3 @@ const cookieParser = () => (req, res, next) => {
     req.parsedCookies = cookies;
     return next();
   };
-  export default cookieParser;
