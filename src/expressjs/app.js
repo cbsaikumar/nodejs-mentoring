@@ -16,4 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 
+app.get('*', (req, res)=> res.send('Hello, please use either /api/users or /api/products routes'));
+
 export default app;
