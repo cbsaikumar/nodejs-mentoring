@@ -17,7 +17,6 @@ http.createServer((req, res) => {
             { size: 'XL' }
         ]
     };
-    res.write(JSON.stringify(product));
-
-    res.end();
+    res.end(JSON.stringify(product));
+    
 }).listen(port, ()=>log(`Server started and listening on port ${port}.`));

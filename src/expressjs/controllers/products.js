@@ -8,7 +8,7 @@ export const getAllProducts = (req, res) => {
 
 export const getProduct = (req, res) => {
     const { id } = req.params;
-    const result = products.default.find(product => product.id === parseInt(id));
+    const result = products.default.find(product => product.id === parseInt(id, 10));
 
     return res.json(result);
 }
@@ -16,7 +16,7 @@ export const getProduct = (req, res) => {
 export const getProductReviews = (req, res) => {
     const { id } = req.params;
 
-    const reviews = products.default.find(product => product.id === parseInt(id)).reviews;
+    const reviews = products.default.find(product => product.id === parseInt(id, 10)).reviews;
     
     return res.json(reviews);
 }
