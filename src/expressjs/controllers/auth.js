@@ -1,8 +1,9 @@
 import * as jwt from 'jsonwebtoken';
 import * as config from '../config/config';
+import passport from 'passport';
+import strategies from '../config/strategies';
 
 export const auth = (req, res) => {
-
     const {username: configUsername, password: configPassword} = config.user;
     const secret = config.secret;
     const {username, password} = req.body;

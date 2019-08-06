@@ -1,4 +1,5 @@
 import express from 'express';
+import passport from 'passport';
 import { cookieParser } from './middlewares/cookieParser';
 import { queryParser } from './middlewares/queryParser';
 import router from './routes/routes';
@@ -10,6 +11,9 @@ app.use(queryParser());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/api', router);
 
