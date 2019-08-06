@@ -9,25 +9,25 @@ export const isAuthenticated = (req, res, next) => {
 
         if(!token) 
             return res.json({
-                'code': 401,
-                'message': 'Unautherized',
-                'data': 'No token passed'
+                code: 401,
+                message: 'Unautherized',
+                data: 'No token passed'
             });
 
         return jwt.verify(token, secret, (err, authData) => {
             if(err){
                 res.json({
-                    'code': 401,
-                    'message': 'Unauthorized',
-                    'data': 'Incorrect token'
+                    code: 401,
+                    message: 'Unauthorized',
+                    data: 'Incorrect token'
                 });
             } else{
                 const {username, password} = authData;
                 if(username !== configUsername || password !== configPassword)
                     return res.json({
-                        'code': 401,
-                        'message': 'Unauthorized',
-                        'data': 'Username/password might have been malformed'
+                        code: 401,
+                        message: 'Unauthorized',
+                        data: 'Username/password might have been malformed'
                     });
                                 
                 return next();

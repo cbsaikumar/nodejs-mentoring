@@ -13,15 +13,15 @@ export const auth = (req, res) => {
     if(username === configUsername && password === configPassword){
         const token = jwt.sign(config.user, secret);
         return res.json({
-            'code': 200,
-            'message': 'OK',
-            'data': config.user,
-            'token': token
+            code: 200,
+            message: 'OK',
+            data: config.user,
+            token: token
         });
     } else{
         return res.json({
-            'code': 404,
-            'message': 'Not Found'
+            code: 404,
+            message: 'Not Found'
         });
     }
 }

@@ -9,10 +9,10 @@ export const facebookStrategy = () => {
       },
         (accessToken, refreshToken, profile, done) => {
             return done(null, profile, {
-                'code': 200,
-                'message': 'Facebook Authentication Successful',
-                'data': profile,
-                'token': refreshToken
+                code: 200,
+                message: 'Facebook Authentication Successful',
+                data: profile,
+                token: refreshToken
             })
         }
     );

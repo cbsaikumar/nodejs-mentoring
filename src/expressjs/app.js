@@ -14,9 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-    'secret': '343ji43j4n3jn4jk3n',
-    'resave': true,
-    'saveUninitialized': false
+    secret: '343ji43j4n3jn4jk3n',
+    resave: true,
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
