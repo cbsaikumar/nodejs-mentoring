@@ -9,6 +9,7 @@ const router = express.Router();
 router.use('/auth', authRouter);
 
 router.use(isAuthenticated);
+
 router.use('/users', userRouter);
 router.use('/products', productRouter);
 

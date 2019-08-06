@@ -1,11 +1,11 @@
-import {Strategy as FacebookStrategy} from 'passport-facebook';
+import {Strategy as GoogleStrategy} from 'passport-google-oauth20';
 import * as config from '../config';
 
-export const facebookStrategy = () => {
-   return new FacebookStrategy({
-        clientID: config.facebook.clientID,
-        clientSecret: config.facebook.clientSecret,
-        callbackURL: config.facebook.callbackUrl
+export const googleStrategy = () => {
+   return new GoogleStrategy({
+        clientID: config.google.clientID,
+        clientSecret: config.google.clientSecret,
+        callbackURL: config.google.callbackUrl
       },
         (accessToken, refreshToken, profile, done) => {
             return done(null, profile, {
