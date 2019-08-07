@@ -38,3 +38,19 @@ URL                             Method              Action
 /api/products                    POST       Add ​NEW​ product and return it
 /api/users                       GET        Return ​ALL​ users
 ```
+
+## Social Media authentications (google, facebook, twitter authentication mechanisms have been incorporated) 
+```bash
+nodemon -r esm src/expressjs/index.js
+
+URL                             Method              Action
+/api/auth                        POST        jwt authentication, it returns token after successful login
+/api/products                    GET         returns all products only when u attach a token from above api response(protected route)
+/api/products/:id/reviews        GET         same as above(protected route)
+/api/products                    POST        same as above(protected route)
+/api/users                       GET         same as above(protected route)
+
+/api/auth/facebook               GET         passport facebook strategy authentication, it redirects to facebook login screen for login
+/api/auth/google                 GET         passport google strategy authentication, it redirects to google login screen for login
+/api/auth/twitter                GET         passport twitter strategy authentication, it redirects to twitter login screen for login
+```
