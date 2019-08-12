@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import * as dbConfig from '../config/db';
+import {development} from '../config/config.json';
 
-const {dialect, username, password, host, port, dbname} = dbConfig;
+const {dialect, username, password, host, port, dbname} = development;
 export const sequelize = new Sequelize(`${dialect}://${username}:${password}@${host}:${port}/${dbname}`);

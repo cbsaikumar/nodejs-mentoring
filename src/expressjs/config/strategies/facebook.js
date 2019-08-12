@@ -1,5 +1,5 @@
 import {Strategy as FacebookStrategy} from 'passport-facebook';
-import * as config from '../config';
+import * as config from '../conf';
 
 export const facebookStrategy = () => {
    return new FacebookStrategy({

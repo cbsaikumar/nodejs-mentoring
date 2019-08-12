@@ -1,4 +1,4 @@
-import * as config from '../config/config';
+import * as config from '../config/conf';
 import * as jwt from 'jsonwebtoken';    
 
 export const isAuthenticated = (req, res, next) => {

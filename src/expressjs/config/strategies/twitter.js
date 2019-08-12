@@ -1,5 +1,5 @@
 import {Strategy as TwitterStrategy} from 'passport-twitter';
-import * as config from '../config';
+import * as config from '../conf';
 
 export const twitterStrategy = () => {
    return new TwitterStrategy({

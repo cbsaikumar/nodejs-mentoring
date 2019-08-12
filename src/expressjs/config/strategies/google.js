@@ -1,5 +1,5 @@
 import {Strategy as GoogleStrategy} from 'passport-google-oauth20';
-import * as config from '../config';
+import * as config from '../conf';
 
 export const googleStrategy = () => {
    return new GoogleStrategy({

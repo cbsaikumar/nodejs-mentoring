@@ -1,18 +1,20 @@
 import Sequelize from 'sequelize';
 import { sequelize } from '../database/connection';
 
-export const Users = sequelize.define('users', {
+export const Product = sequelize.define('product', {
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
-    username: {
+    name: {
        type: Sequelize.STRING,
        allowNull: false
     },
-    age: Sequelize.INTEGER,
-    salary: Sequelize.NUMBER,
-    email: Sequelize.STRING,
+    brand: Sequelize.STRING,
+    model: Sequelize.STRING,
+    price: Sequelize.NUMBER,
+    reviews: Sequelize.JSON,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
 });
