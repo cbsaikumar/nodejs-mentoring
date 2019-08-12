@@ -1,5 +1,8 @@
-import * as users from '../config/users';
+import { Users } from '../models/users';
 
 export const getAllUsers = (req, res) => {
-    return res.json(users.default);
+    Users.findAll().then(users => {
+        console.log(`all users ${JSON.stringify(users)}`)
+        return res.json(JSON.stringify(users));
+    });
 }
