@@ -1,5 +1,6 @@
-import { Product } from '../models/product';
+import { models } from '../database/connection';
 
+const { Product } = models;
 export const getAllProducts = (req, res) => {
     Product.findAll().then(products => {
         console.log(`All products ${JSON.stringify(products)}`);

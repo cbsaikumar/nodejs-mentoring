@@ -1,4 +1,6 @@
-import { User } from '../models/user';
+import {models} from '../database/connection';
+
+const { User } = models;
 
 export const getAllUsers = (req, res) => {
     User.findAll().then(users => {

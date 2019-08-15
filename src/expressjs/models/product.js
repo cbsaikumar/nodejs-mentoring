@@ -1,20 +1,14 @@
-import Sequelize from 'sequelize';
-import { sequelize } from '../database/connection';
-
-export const Product = sequelize.define('product', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    name: {
-       type: Sequelize.STRING,
-       allowNull: false
-    },
-    brand: Sequelize.STRING,
-    model: Sequelize.STRING,
-    price: Sequelize.NUMBER,
-    reviews: Sequelize.JSON,
-    createdAt: Sequelize.DATE,
-    updatedAt: Sequelize.DATE
-});
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Product = sequelize.define('Product', {
+    name: DataTypes.STRING,
+    brand: DataTypes.STRING,
+    model: DataTypes.STRING,
+    price: DataTypes.INTEGER,
+    reviews: DataTypes.JSON
+  }, {});
+  Product.associate = function(models) {
+    // associations can be defined here
+  };
+  return Product;
+};
