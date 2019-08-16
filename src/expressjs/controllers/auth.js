@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import * as config from '../config/config';
+import * as config from '../config/conf';
 import strategies from '../config/passport';
 import passport from 'passport';
 

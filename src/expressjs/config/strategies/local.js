@@ -1,5 +1,5 @@
 import {Strategy as LocalStrategy} from 'passport-local';
-import * as config from '../config';
+import * as config from '../conf';
 
 export const localStrategy = () => {
    return new LocalStrategy((username, password, cb) => {

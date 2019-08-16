@@ -54,3 +54,15 @@ URL                             Method              Action
 /api/auth/google                 GET         passport google strategy authentication, it redirects to google login screen for login
 /api/auth/twitter                GET         passport twitter strategy authentication, it redirects to twitter login screen for login
 ```
+
+## Postgresql database has been setup to replace usage of hardcoded data. All the below specified routes serves the purpose of getting data from the Postgresql by using Sequelize orm.  
+```bash
+npm run express
+
+URL                             Method              Action
+/api/products                    GET         returns all products from the postgresql hosted in localhost
+/api/products/:id                GET         returns a single product matching the id specified
+/api/products/:id/reviews        GET         returns reviews of a product with id
+/api/products                    POST        adding a product to the database and returns the same upon                                                 successful post
+/api/users                       GET         returns all users same as above.
+```

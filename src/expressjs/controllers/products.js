@@ -1,33 +1,44 @@
-import * as products from '../config/products';
-import fs from 'fs';
-import path from 'path';
+import { models } from '../database/connection';
 
+const { Product } = models;
 export const getAllProducts = (req, res) => {
-    return res.json(products.default);
+    Product.findAll().then(products => {
+        console.log(`All products ${JSON.stringify(products)}`);
+        return res.json(products);
+    })
+    .catch(err => res.send(`Error: ${err}`));
 }
 
 export const getProduct = (req, res) => {
     const { id } = req.params;
-    const result = products.default.find(product => product.id === parseInt(id, 10));
-
-    return res.json(result);
+    Product.findByPk(id).then(product => {
+        console.log(`Product ${JSON.stringify(product)}`);
+        return res.json(product);
+    })
+    .catch(err => res.send(`Error: ${err}`));
 }
 
 export const getProductReviews = (req, res) => {
     const { id } = req.params;
 
-    const reviews = products.default.find(product => product.id === parseInt(id, 10)).reviews;
-    
-    return res.json(reviews);
+    Product.findOne({
+        where: {
+            id
+        },
+        attributes: ['reviews']
+    }).then(reviews => {
+        console.log(`Review with product id ${id} = ${JSON.stringify(reviews)}`);
+        return res.json(reviews);
+    })
+    .catch(err => res.send(`Error: ${err}`));
 }
 
 export const postProduct = (req, res) => {
-    const product = req.body;
-    console.log(product);
+    const {id, name, brand, model, price, reviews} = req.body;
     
-    products.default.push(product);
-
-    fs.writeFileSync(path.join(__dirname,'../config/','products.json'), JSON.stringify(products.default));
-
-    res.json(product);
+    Product.create({id, name, brand, model, price, reviews}).then(product=> {
+        console.log(`product added ${JSON.stringify(product)}`);
+        res.json(product);
+    })
+    .catch(err => res.send(`Error: ${err}`));
 }
