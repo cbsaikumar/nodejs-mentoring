@@ -21,9 +21,9 @@ export const getProduct = (req, res) => {
 export const getProductReviews = (req, res) => {
     const { id } = req.params;
 
-    const reviews = Product.findOne({
+    Product.findOne({
         where: {
-            id: id
+            id
         },
         attributes: ['reviews']
     }).then(reviews => {
