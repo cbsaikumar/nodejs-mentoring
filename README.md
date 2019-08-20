@@ -66,3 +66,18 @@ URL                             Method              Action
 /api/products                    POST        adding a product to the database and returns the same upon                                                 successful post
 /api/users                       GET         returns all users same as above.
 ```
+
+
+## Mongodb database has been setup. All the below specified routes serves the purpose of getting data from the mongodb atlas by using mongoose.  
+```bash
+npm run express
+
+URL                             Method              Action
+/api/mongo/products              GET         returns all products from mongodb atlas
+/api/mongo/cities                GET         returns all cities from mongodb atlas
+/api/mongo/cities/:id            DELETE      returns all cities from mongodb atlas
+/api/mongo/cities/random         GET         returns a random city from mongodb atlas
+/api/mongo/products              POST        add a product to the mongodb atlas and returns the same upon successful post
+/api/mongo/users/:id             DELETE      Deletes ​SINGLE​ user
+/api/mongo/products/:id          DELETE      Deletes ​SINGLE​ product
+```

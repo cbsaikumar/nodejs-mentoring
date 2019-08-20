@@ -1,4 +1,4 @@
-import * as mongoose from './../config/mongoose';
+import mongoose from './../config/mongoose.js';
 
 const Schema = mongoose.Schema;
 
@@ -35,4 +35,4 @@ usersSchema.pre('save', (next) => {
 });
 
 
-module.exports = mongoose.model('User', usersSchema);
+export const User = mongoose.model('User', usersSchema);

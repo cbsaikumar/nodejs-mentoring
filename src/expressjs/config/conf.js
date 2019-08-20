@@ -23,5 +23,5 @@ export const google = {
 }
 
 export const mongo = {
-    url: 'mongodb://localhost:27017/NodeJS_Mentoring'
+    url: 'mongodb+srv://nodementor:nodementor@mflix-o6zce.mongodb.net/test?retryWrites=true&w=majority'
 }

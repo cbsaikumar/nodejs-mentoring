@@ -1,4 +1,4 @@
-import * as mongoose from './../config/mongoose';
+import mongoose from './../config/mongoose.js';
 
 const Schema = mongoose.Schema;
 
@@ -27,10 +27,10 @@ const citiesSchema = new Schema({
   lastModifiedDate: Date
 });
 
-citiesSchema.pre('save', function (next){
+citiesSchema.pre('save', (next) => {
   const date = new Date();
   this.lastModifiedDate = date;
   next();
 })
 
-module.exports = mongoose.model('City', citiesSchema);
+export const City = mongoose.model('City', citiesSchema);

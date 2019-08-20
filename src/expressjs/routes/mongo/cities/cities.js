@@ -3,7 +3,7 @@ import * as cities from '../../../controllers/mongo/cities';
 
 const mCititesRouter = express.Router();
 
-mCititesRouterget.get('/random', cities.getRandomCity);
+mCititesRouter.get('/random', cities.getRandomCity);
 
 mCititesRouter.route("/")
   .get(cities.getCities)

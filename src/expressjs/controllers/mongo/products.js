@@ -1,4 +1,4 @@
-import {Product} from '../../models/mProduct';
+import { Product } from '../../models/mProduct';
 
 export const getProducts = (req, res) => {
   Product.find({}, (err, products) => {
