@@ -21,3 +21,7 @@ export const google = {
     clientSecret: 'jEl_KQO35e8cBrDFmB4bCwaR',
     callbackUrl: 'http://localhost:8081/api/auth/google/callback'
 }
+
+export const mongo = {
+    url: 'mongodb://localhost:27017/NodeJS_Mentoring'
+}
