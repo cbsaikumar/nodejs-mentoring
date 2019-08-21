@@ -21,3 +21,7 @@ export const google = {
     clientSecret: 'jEl_KQO35e8cBrDFmB4bCwaR',
     callbackUrl: 'http://localhost:8081/api/auth/google/callback'
 }
+
+export const mongo = {
+    url: 'mongodb+srv://nodementor:nodementor@mflix-o6zce.mongodb.net/test?retryWrites=true&w=majority'
+}
