@@ -28,7 +28,7 @@ const usersSchema = new Schema({
   lastModifiedDate: Date
 });
 
-usersSchema.pre('save', (next) => {
+usersSchema.pre('save', function(next) {
   const date = new Date();
   this.lastModifiedDate = date;
   next();

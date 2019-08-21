@@ -27,7 +27,7 @@ const citiesSchema = new Schema({
   lastModifiedDate: Date
 });
 
-citiesSchema.pre('save', (next) => {
+citiesSchema.pre('save', function(next){
   const date = new Date();
   this.lastModifiedDate = date;
   next();

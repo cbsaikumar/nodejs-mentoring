@@ -26,7 +26,7 @@ const productsSchema = new Schema({
   lastModifiedDate: Date
 });
 
-productsSchema.pre('save', (next) => {
+productsSchema.pre('save', function(next) {
   const date = new Date();
   this.lastModifiedDate = date;
   next();
