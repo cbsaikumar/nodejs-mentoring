@@ -9,7 +9,7 @@ import mUserRouter from './mongo/users/users';
 
 const router = express.Router();
 
-router.use('/auth', authRouter);
+// router.use('/auth', authRouter);
 
 // router.use(isAuthenticated);
 
