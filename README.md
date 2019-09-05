@@ -81,3 +81,10 @@ URL                             Method              Action
 /api/mongo/users/:id             DELETE      Deletes ​SINGLE​ user
 /api/mongo/products/:id          DELETE      Deletes ​SINGLE​ product
 ```
+
+## Swagger Documentation has been created for all the routes from homework 7.  So keep express server open and open /api-docs to view swagger documentation.
+```bash
+npm run express
+http://localhost:8081/api-docs
+```
+
