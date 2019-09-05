@@ -28,7 +28,7 @@
     ],
     "paths": {
        "/auth": {
-          "post": {
+          "get": {
              "tags": [
                 "auth"
              ],
@@ -69,7 +69,7 @@
           }
        },
        "/auth/local": {
-          "post": {
+          "get": {
              "tags": [
                 "auth"
              ],
@@ -111,7 +111,7 @@
           }
        },
        "/auth/twitter": {
-          "post": {
+          "get": {
              "tags": [
                 "auth"
              ],
@@ -137,7 +137,7 @@
           }
        },
        "/auth/facebook": {
-          "post": {
+          "get": {
              "tags": [
                 "auth"
              ],
@@ -163,12 +163,12 @@
           }
        },
        "/auth/google": {
-          "post": {
+          "get": {
              "tags": [
                 "auth"
              ],
              "summary": "Simple google auth",
-             "description": "Simple route for local auth",
+             "description": "Simple route for google auth",
              "operationId": "authGoogle",
              "produces": [
                 "application/json"
